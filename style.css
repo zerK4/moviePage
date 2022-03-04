@@ -1,0 +1,360 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+* li{
+    list-style: none;
+}
+* a{
+    text-decoration: none;
+    color: white;
+}
+body{
+    background-color: black;
+    color: white;
+    overflow-x: hidden;
+}
+header{
+    background: #000;
+    height: 5rem;
+    display: flex;
+    align-items: center;
+    padding: 0 20px;
+    justify-content: space-between;
+}
+.logoSpace{
+    flex: 1;
+    display: flex;
+    align-items: center;
+}
+.logo{
+    flex: 1;
+    font-size: 2rem;
+    font-weight: 500;
+}
+.search{
+    flex: 1;
+    margin-left: 30px;
+    border: none;
+    border-radius: 2px;
+    padding-left: 10px;
+    outline: none;
+    height: 2rem;
+    background: #000;
+    color: whitesmoke;
+    transition: all .5s ease-in-out;
+}
+.search:focus{
+    flex: 3;
+    box-shadow: .1px .1px 5px 1px white;
+    margin-right: 10px;
+
+}
+.searchButton{
+    margin-right: 30px;
+    padding: 0 10px;
+    border: none;
+    height: 2rem;
+    background: #000;
+    color: whitesmoke;
+    box-shadow: 1px 1px 5px 1px black;
+    transition: all .5s ease-in-out;
+    border-radius: 2px;
+    cursor: pointer;
+}
+.searchButton:hover{
+    box-shadow: .1px .1px 5px 1px white;
+}
+
+.menuCenter{
+    flex: 2;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.center{
+    flex: 2;
+    display: flex;
+
+}
+.menuLink{
+    margin-right: 40px;
+    position: relative;
+    transition: all .3s ease-in-out;
+}
+.menuLink::before{
+    content: '';
+    position: absolute;
+    top: 100%;
+    height: 1px;
+    width: 0;
+    background: whitesmoke;
+}
+.menuLink:hover::before{
+    width: 100%;
+    transition: all .3s ease-in-out;
+}
+
+.toggleText{
+    top: 100%;
+    background: whitesmoke;
+    position: absolute;
+    width: 12rem;
+    border-radius: 10px;
+    padding: 10px;
+    color: black;
+    display: none;
+}
+.toggler{
+    height: 20px;
+    width: 40px;
+    background: #000;
+    margin-right: 20px;
+    border-radius: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 2px;
+    position: relative;
+    cursor: pointer;
+}
+.toggler:hover .toggleText{
+    display: block;
+}
+.toggleBall{
+    height: 19px;
+    width: 19px;
+    background: #000;
+    position: absolute;
+    border-radius: 50%;
+    right: 0;
+}
+.icon{
+    color: orange;
+}
+.userSpace{
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+.userIcons{
+    margin-right: 15px;
+    cursor: pointer;
+}
+.fa-user{
+    height: 2.5rem;
+    width: 2.5rem;
+    box-shadow: .1px .1px 3px 1px white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+}
+/* Hero section */
+.heroImg{
+    width: 100vw;
+    object-fit: cover;
+    height: 70vh;
+    position: relative;
+    background-image: linear-gradient( rgba(0, 0, 0, 1) 10%, rgba(0, 0, 0, 0), rgb(0, 0, 0, 1) 70%),
+    url('/img/1.svg');
+    background-size: cover; 
+    margin-top: 11rem;
+}
+.heroMovieName{
+    font-family: 'Rock Salt', cursive;
+    font-size: 5rem;
+}
+.heroDet{
+    margin-left: 30px;
+    padding: 30px;
+    width: 25rem;
+}
+.heroMovieButton{
+    height: 3rem;
+    width: 7rem;
+    margin-top: 40px;
+    background: #000;
+    color: white;
+    border: none;
+    outline: none;
+    box-shadow: .1px .1px 5px 1px white;
+    font-family: 'Rock Salt', cursive;
+    cursor: pointer;
+}
+/* //movie container */
+
+.movieContainer{
+    min-height: 50vh;
+    height: auto;
+    background: #000;
+    padding: 20px;
+    margin-bottom: 10rem;
+    position: relative;
+}
+.movieTitleDesc{
+    padding-left: 5px;
+    padding-bottom: 20px;
+}
+.movieWrapper{
+    display: flex;
+    margin-bottom: 5rem;
+    transform: translateX(0);
+    transition: .5s all ease-in-out;
+    margin-right: 10px;
+}
+.movie{
+    width: 20rem;
+    position: relative;
+    height: 14rem;
+    transition: all .5s ease-in-out;
+    margin: 0 5px;
+
+}
+.movieImg{
+    height: 14rem;
+    width: 20rem;
+    object-fit: cover;
+    position: relative;
+    transition: all .5s ease-in-out;
+}
+.movieName{
+    position: absolute;
+    top: 0;
+    background: rgb(0, 0, 0, .7);
+    width: 100%;
+    text-align: center;
+    padding: 10px 0;
+    opacity: 0;
+    transition: all .5s ease-in-out;
+}
+.movieDesc{
+    position: absolute;
+    bottom: 0;
+    background: rgb(0, 0, 0, .7);
+    padding: 10px 5px;
+    opacity: 0;
+    transition: all .5s ease-in-out;
+}
+.watchMovie{
+    position: absolute;
+    bottom: 5%;
+    right: 5%;
+    padding: 10px;
+    border: none;
+    outline: none;
+    color: white;
+    background: #000;
+    opacity: 0;
+    transition: all .5s ease-in-out;
+    font-weight: 500;
+    box-shadow: .1px .1px 3px 1px whitesmoke;
+    cursor: pointer;
+}
+.movie:hover{
+    transform: scale(1.1);
+    margin: 0 20px 0 20px;
+}
+.movie:hover .movieName{
+    opacity: 1;
+}
+.movie:hover .movieDesc{
+    opacity: 1;
+}
+.movie:hover .watchMovie{
+    opacity: 1;
+}
+.heroImg2{
+    width: 100vw;
+    object-fit: cover;
+    height: 30vh;
+    position: relative;
+    background-image: linear-gradient( rgba(0, 0, 0, 1) 10%, rgba(0, 0, 0, 0), rgb(0, 0, 0, 1) 70%),
+    url('/img/4.svg');
+    background-size: cover;
+    margin-bottom: 11rem;
+}
+.heroMovieName2{
+    font-family: 'Rock Salt', cursive;
+    font-size: 5rem;
+    position: absolute;
+    top: -50%;
+}
+.heroDet2{
+    margin-left: 30px;
+    padding: 30px;
+    width: 25rem;
+}
+.heroMovieButton2{
+    height: 3rem;
+    width: 7rem;
+    margin-top: 40px;
+    background: #000;
+    color: white;
+    border: none;
+    outline: none;
+    box-shadow: .1px .1px 5px 1px white;
+    font-family: 'Rock Salt', cursive;
+    cursor: pointer;
+}
+.arrow{
+    font-size: 5rem;
+    color: whitesmoke;
+    opacity: .7;
+    position: absolute;
+    top: 30%;
+    right: 1%;
+    z-index: 99;
+    cursor: pointer;
+}
+
+footer{
+    width: 100vw;
+    height: auto;
+    display: flex;
+}
+
+.footerLeft{
+    flex: 2;
+    display: flex;
+    justify-content: space-between;
+    padding: 50px;
+}
+.footerLeftL{
+    flex: 2;
+}
+.social{
+    padding: 50px 0;
+}
+.socialIcon{
+    font-size: 2rem;
+    margin-right: 10px;
+    cursor: pointer;
+}
+.contact{
+    padding: 10px 0;
+    font-size: 18px;
+}
+.footerLeftR{
+    flex: 1;
+}
+.newContent{
+    padding-top: 50px;
+}
+.new{
+    padding: 10px 0;
+    cursor: pointer;
+}
+.footerRight{
+    flex: 1;
+    object-fit: cover;
+    width: 30vw;
+    height: 50vh;
+    background-image: linear-gradient( rgba(0, 0, 0, .4), rgb(0, 0, 0, .7)),
+    url('/img/footer.svg');
+    background-size: cover;
+}
